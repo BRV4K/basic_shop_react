@@ -5,6 +5,7 @@ import { getProducts } from "../../services/api";
 import async from "async";
 import {setProducts} from "../../redux/products/products";
 import {useEffect} from "react";
+import BasketButton from "../../components/BasketButton/BasketButton";
 
 export default function Main(props) {
     const products = useSelector(state => state.products.products);
@@ -18,9 +19,7 @@ export default function Main(props) {
                      }): <p>Товары загружаются</p>}
                  </div>
                  <div className='position-absolute top-0 end-0 me-5'>
-                     <Link to={'/basket'}>
-                         <button className='btn btn-outline-primary'>Корзина</button>
-                     </Link>
+                     <BasketButton />
                  </div>
              </div>
          </>

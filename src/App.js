@@ -16,7 +16,6 @@ export default function App() {
         });
 
         getSizes().then(resolve => {
-            console.log(resolve);
             dispatch(setSizes(resolve))
         });
     }, []);
