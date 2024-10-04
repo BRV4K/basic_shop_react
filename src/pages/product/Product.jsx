@@ -47,6 +47,12 @@ export default function Product() {
             setCurImage(curImage + 1);
         }
     }
+
+    const handleClickColor = (color) => {
+        setCurColor(color);
+        setChoosenSize(undefined);
+    }
+
     if (product) {
         return (
             <>
@@ -73,7 +79,7 @@ export default function Product() {
 
                         <div className='d-flex gap-2 mt-2 mb-2'>
                             {colors.map((color, index) => {
-                                return (<div onClick={() => setCurColor(color)} key={index} className={curColor === color ? 'border border-info rounded-circle' : 'border border-dark rounded-circle'} style={{'backgroundColor': `${colorTranslate[color]}`, 'width': '30px', 'height': '30px'}}>
+                                return (<div onClick={() => handleClickColor(color)} key={index} className={curColor === color ? 'border border-info rounded-circle' : 'border border-dark rounded-circle'} style={{'backgroundColor': `${colorTranslate[color]}`, 'width': '30px', 'height': '30px'}}>
                                 </div>)
                             })}
                         </div>
